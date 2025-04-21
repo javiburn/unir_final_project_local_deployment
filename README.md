@@ -53,7 +53,7 @@ Los tests están en el directorio tests/ con cobertura del 80%+.
 
 Ejecuta los tests con:
     ```
-    docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
+    docker-compose exec flask-app pytest --cov=app --cov-fail-under=80
     ```
 
 ### 📂 Estructura del proyecto

@@ -1,1 +1,88 @@
-[⬇️ Descargar README.md](data:text/markdown;charset=utf-8;base64,8J+UjyBBcGxpY2FjacOzbiBGbGFzayBjb24gUG9zdGdyZVNRTCAtIERvY2tlcml6YWRhCgpbIVtEb2NrZXJdKGh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vYmFkZ2UvRG9ja2VyLTJjQTVFMD9zdHlsZT1mb3ItdGhlLWJhZGdlJmxvZ289ZG9ja2VyJmxvZ29Db2xvcj13aGl0ZSldKCNkb2NrZXIpClshW0ZsYXNrXShodHRwczovL2ltZy5zaGllbGRzLmlvL2JhZGdlL0ZsYXNrLTAwMDAwMD9zdHlsZT1mb3ItdGhlLWJhZGdlJmxvZ289Zmxhc2smbG9nb0NvbG9yPXdoaXRlKV0oI2ZsYXNrKQpbIVtQb3N0Z3JlU1FMXShodHRwczovL2ltZy5zaGllbGRzLmlvL2JhZGdlL1Bvc3RncmVTUUwtMzE2MTkyP3N0eWxlPWZvci10aGUtYmFkZ2UmbG9nbz1wb3N0Z3Jlc3FsJmxvZ29Db2xvcj13aGl0ZSldKCNwb3N0Z3Jlc3FsKQoKQXBsaWNhY2nDs24gRmxhc2sgY29uIGJhc2UgZGUgZGF0b3MgUG9zdGdyZVNRTCBlbiBjb250ZW5lZG9yZXMgRG9ja2VyLCBsaXN0YSBwYXJhIHByb2R1Y2Npw7NuLiBJbmNsdXllIHRlc3RzIGNvbiBjb2JlcnR1cmEgZGVsIDgwJSsgdXNhbmRvIHB5dGVzdC4KCiMjIPCflpAgSW5pY2lvIHJhcGlkbwoKIyMjIFJlcXVpc2l0b3MKLSBEb2NrZXIgMjAuMTArCi0gRG9ja2VyIENvbXBvc2UgMi4wKwoKIyMjIEluc3RhbGFjacOzbgoxLiBDbG9uYSBlbCByZXBvc2l0b3JpbzoKICAgYGBgYmFzaAogICBnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL3R1dXN1YXJpby9mbGFzay1wb3N0Z3Jlcy1kb2NrZXIuZ2l0CiAgIGNkIGZsYXNrLXBvc3RncmVzLWRvY2tlcgogICBgYGAKCjIuIENyZWEgZWwgYXJjaGl2byBkZSBlbnRvcm5vOgogICBgYGBiYXNoCiAgIGNwIC5lbnYuZXhhbXBsZSAuZW52CiAgIGBgYAogICBFZGl0YSBlbCAuZW52IGNvbiB0dSBjb25maWd1cmFjacOzbi4KCjMuIENvbnN0cnV5ZSBlIGluaWNpYSBsb3Mgc2VydmljaW9zOgogICBgYGBiYXNoCiAgIGRvY2tlci1jb21wb3NlIHVwIC0tYnVpbGQgLWQKICAgYGBgCgo0LiBWZXJpZmljYSBxdWUgZXN0w6kgZnVuY2lvbmFuZG86CiAgIGBgYGJhc2gKICAgZG9ja2VyLWNvbXBvc2UgcHMKICAgYGBgCgojIPCfqKAgQWNjZXNvIGEgbGEgYXBsaWNhY2nDs24KLSBBcGxpY2FjacOzbiBGbGFzazogaHR0cDovL2xvY2FsaG9zdDo1MDAwCi0gUG9zdGdyZVNRTC
+# Aplicación Flask con PostgreSQL - Dockerizada
+
+![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+Aplicación Flask con base de datos PostgreSQL en contenedores Docker, lista para producción. Incluye tests con cobertura del 80%+ usando pytest.
+
+## 🚀 Inicio rápido
+
+### Requisitos
+- Docker 20.10+
+- Docker Compose 2.0+
+
+### Instalación
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/flask-postgres-docker.git
+   cd flask-postgres-docker
+Crea el archivo de entorno:
+
+bash
+cp .env.example .env
+Edita el .env con tu configuración.
+
+Construye e inicia los servicios:
+
+bash
+docker-compose up --build -d
+Verifica que esté funcionando:
+
+bash
+docker-compose ps
+### 🌐 Acceso a la aplicación
+Aplicación Flask: http://localhost:5000
+
+PostgreSQL:
+
+bash
+docker exec -it flask-postgres-docker-db-1 psql -U tu_usuario_db tu_base_de_datos
+### 🧪 Ejecutar tests
+Los tests están en el directorio tests/ con cobertura del 80%+.
+
+Ejecuta los tests con:
+
+bash
+docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
+📂 Estructura del proyecto
+.
+├── app/
+│   ├── __init__.py          # Factoría de la aplicación
+│   ├── config.py            # Configuración
+│   ├── models.py            # Modelos de la base de datos
+│   ├── routes.py            # Rutas de la aplicación
+├── tests/
+│   ├── test_config.py       # Tests de configuración
+│   ├── test_models.py       # Tests de modelos
+│   └── test_routes.py       # Tests de rutas
+├── Dockerfile               # Contenedor de Flask
+├── docker-compose.yml       # Orquestación
+├── .env.example             # Plantilla de variables
+└── requirements.txt         # Dependencias Python
+
+### 🔧 Configuración
+Variables de entorno principales (en .env):
+
+
+FLASK_ENV=development
+DATABASE_URL=postgresql://usuario:contraseña@db:5432/nombre_db
+SECRET_KEY=tu-clave-secreta
+
+### 🛠️ Comandos útiles
+Comando	Descripción
+docker-compose up -d	Inicia servicios en segundo plano
+docker-compose down	Detiene y elimina contenedores
+docker-compose logs -f flask-app	Muestra logs de la app
+docker-compose exec flask-app flask shell	Abre shell de Flask
+### 📈 Monitorización
+Ver uso de recursos:
+
+bash
+docker stats
+### 🚨 Solución de problemas
+Conflictos de puertos: Verifica que los puertos 5000 (Flask) y 5432 (Postgres) estén libres
+
+Problemas con la base de datos: Ejecuta docker-compose down -v para reiniciar volúmenes
+
+Cambios en dependencias: Reconstruye con docker-compose up --build

@@ -51,22 +51,22 @@ Ejecuta los tests con:
     docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
 
 ### 📂 Estructura del proyecto
-.
-├── app/
-│   ├── __init__.py          # Factoría de la aplicación
-│   ├── config.py            # Configuración
-│   ├── models.py            # Modelos de la base de datos
-│   ├── routes.py            # Rutas de la aplicación
-├── tests/
-│   ├── test_config.py       # Tests de configuración
-│   ├── test_models.py       # Tests de modelos
-│   └── test_routes.py       # Tests de rutas
-├── Dockerfile               # Contenedor de Flask
-├── docker-compose.yml       # Orquestación
-├── .example_env             # Plantilla de variables
-├── manage.sh                # Script para inicializar el proceso
-├── requirements.txt         # Dependencias Python
-└── manage.py                # Entrypoint Python
+    ```bash
+    ├── app/
+    │   ├── __init__.py          # Factoría de la aplicación
+    │   ├── config.py            # Configuración
+    │   ├── models.py            # Modelos de la base de datos
+    │   ├── routes.py            # Rutas de la aplicación
+    ├── tests/
+    │   ├── test_config.py       # Tests de configuración
+    │   ├── test_models.py       # Tests de modelos
+    │   └── test_routes.py       # Tests de rutas
+    ├── Dockerfile               # Contenedor de Flask
+    ├── docker-compose.yml       # Orquestación
+    ├── .example_env             # Plantilla de variables
+    ├── manage.sh                # Script para inicializar el proceso
+    ├── requirements.txt         # Dependencias Python
+    └── manage.py                # Entrypoint Python
 
 ### 🔧 Configuración
 Variables de entorno principales (en .env):

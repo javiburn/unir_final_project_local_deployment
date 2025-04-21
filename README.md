@@ -88,7 +88,7 @@ Variables de entorno principales (en .env):
 ### 🪵 Estrategia de Ramas (Git Flow)
 
 Para el trabajo en equipo seguimos este flujo de trabajo:
-    ```mermaid
+    ```
     gitGraph
         commit
         branch develop
@@ -101,6 +101,7 @@ Para el trabajo en equipo seguimos este flujo de trabajo:
         merge feature/nueva_funcionalidad
         checkout main
         merge develop
+    ```
 ## Ramas Principales
 
 ### `main` (producción)
@@ -184,17 +185,17 @@ Utilizamos [Conventional Commits](https://www.conventionalcommits.org) para mens
 ## 📋 Requisitos para Pull Requests
 
 ### 📝 Descripción obligatoria
-```markdown
-## Qué cambia
-- [Descripción técnica clara de las modificaciones]
+    ```markdown
+    ## Qué cambia
+    - [Descripción técnica clara de las modificaciones]
 
-## Por qué
-- [Explicación del propósito/necesidad del cambio]
+    ## Por qué
+    - [Explicación del propósito/necesidad del cambio]
 
-## Cómo probar
-1. [Pasos específicos para verificar]
-2. [Casos de prueba clave]
-3. [Configuraciones especiales requeridas]
+    ## Cómo probar
+    1. [Pasos específicos para verificar]
+    2. [Casos de prueba clave]
+    3. [Configuraciones especiales requeridas]
 ### 📈 Monitorización
 Ver uso de recursos:
     ```

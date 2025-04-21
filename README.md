@@ -83,6 +83,118 @@ Variables de entorno principales (en .env):
     SECRET_KEY=tu-clave-secreta
     ```
 
+## 👥 Desarrollo Colaborativo
+
+### 🪵 Estrategia de Ramas (Git Flow)
+
+Para el trabajo en equipo seguimos este flujo de trabajo:
+    ```mermaid
+    gitGraph
+        commit
+        branch develop
+        checkout develop
+        commit
+        branch feature/nueva_funcionalidad
+        commit
+        commit
+        checkout develop
+        merge feature/nueva_funcionalidad
+        checkout main
+        merge develop
+## Ramas Principales
+
+### `main` (producción)
+- Versión estable del proyecto
+- Solo se actualiza mediante Pull Requests aprobados
+- Se usa `rebase` para mantener historial limpio
+
+### `develop` (pre-producción)
+- Integración de features completadas
+- Entorno de pruebas avanzadas
+- Paso previo obligatorio antes de `main`
+
+## Ramas de Trabajo
+### `feature/<nombre>`
+- Desarrollo de nuevas funcionalidades
+- Nomenclatura: `feature/login`, `feature/payment-integration`
+- Se mergean a `develop` cuando están completas
+
+## 🔁 Flujo de Trabajo
+
+1. **Crear rama desde develop**:
+   ```bash
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/mi_feature
+2. **Trabajar localmente y hacer commits**:
+   ```bash
+   git add .
+    git commit -m "feat: añade sistema de autenticación"
+3. **Sincronizar con cambios remotos**:
+    ```bash
+    git fetch origin
+    git merge origin/develop
+4. **Publicar cambios**:
+    ```bash
+    git push origin feature/mi_feature
+5. **Crear Pull Request a develop**:
+- Revisión de código obligatoria
+- Tests automáticos deben pasar
+- Aprobación por al menos 1 miembro
+6. **Promoción a producción:**:
+- Merge desde develop a main via PR
+- Tag con versión semántica (v1.0.0)
+## 📌 Reglas Clave
+
+- ❌ **Nunca hacer push directo** a `main` o `develop`  
+  *(Siempre usar Pull Requests)*
+
+- ⚠️ **Resolver conflictos** en la rama de origen  
+  *(Nunca en `main` o `develop`)*
+
+- 🔄 **Actualizar localmente** al menos 1 vez al día  
+  *(Ejecutar `git pull origin develop` regularmente)*
+
+- ✍️ **Commits descriptivos**  
+  ```bash
+  git commit -m "feat: añadir sistema de autenticación"
+  git commit -m "fix: corregir error en validación de formulario"
+
+## 🔧 Conventional Commits
+
+Utilizamos [Conventional Commits](https://www.conventionalcommits.org) para mensajes estandarizados:
+    ```bash
+    git commit -m "feat: añadir autenticación con Google"
+    git commit -m "fix: resolver error en cálculo de totales"
+    git commit -m "docs: actualizar guía de instalación"
+## Conventional Commits
+
+### Tipos permitidos de commits:
+
+| Tipo       | Descripción                              | Ejemplo                          |
+|------------|------------------------------------------|----------------------------------|
+| `feat`     | Nueva funcionalidad                     | `feat: añadir login con Google`  |
+| `fix`      | Corrección de errores                   | `fix: reparar cálculo de IVA`    |
+| `docs`     | Cambios en documentación                | `docs: actualizar README.md`     |
+| `style`    | Formato (sin afectar código)            | `style: ajustar indentación`     |
+| `refactor` | Mejoras de código existente             | `refactor: optimizar consultas`  |
+| `test`     | Añadir/mejorar tests                    | `test: añadir pruebas API`       |
+| `chore`    | Tareas de mantenimiento                 | `chore: actualizar dependencias` |
+
+## 📋 Requisitos para Pull Requests
+
+### 📝 Descripción obligatoria
+```markdown
+## Qué cambia
+- [Descripción técnica clara de las modificaciones]
+
+## Por qué
+- [Explicación del propósito/necesidad del cambio]
+
+## Cómo probar
+1. [Pasos específicos para verificar]
+2. [Casos de prueba clave]
+3. [Configuraciones especiales requeridas]
 ### 📈 Monitorización
 Ver uso de recursos:
     ```

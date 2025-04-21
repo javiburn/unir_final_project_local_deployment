@@ -17,11 +17,13 @@ Aplicación Flask con base de datos PostgreSQL en contenedores Docker, lista par
    ```bash
    git clone https://github.com/javiburn/unir_final_project_local_deployment.git
    cd flask-postgres-docker
+   ```
 
 2. Crea el archivo de entorno:
 
     ```bash
     cp .example_env .env
+    ```
 
 Edita el .env con tu configuración.
 
@@ -29,11 +31,13 @@ Edita el .env con tu configuración.
 
     ```bash
     docker-compose up --build -d
+    ```
 
 4. Verifica que esté funcionando:
 
     ```bash
     docker-compose ps
+    ```
 
 ### 🌐 Acceso a la aplicación
 - Aplicación Flask: http://localhost:5000
@@ -42,13 +46,15 @@ Edita el .env con tu configuración.
 
     ```bash
     docker exec -it flask-postgres-docker-db-1 psql -U tu_usuario_db tu_base_de_datos
+    ```
 
 ### 🧪 Ejecutar tests
 Los tests están en el directorio tests/ con cobertura del 80%+.
 
 Ejecuta los tests con:
-    ```bash
+    ```
     docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
+    ```
 
 ### 📂 Estructura del proyecto
     ```

@@ -15,37 +15,42 @@ Aplicación Flask con base de datos PostgreSQL en contenedores Docker, lista par
 ### Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/flask-postgres-docker.git
+   git clone https://github.com/javiburn/unir_final_project_local_deployment.git
    cd flask-postgres-docker
-Crea el archivo de entorno:
 
-bash
-cp .env.example .env
+2. Crea el archivo de entorno:
+
+    ```bash
+    cp .example_env .env
+
 Edita el .env con tu configuración.
 
-Construye e inicia los servicios:
+3. Construye e inicia los servicios:
 
-bash
-docker-compose up --build -d
-Verifica que esté funcionando:
+    ```bash
+    docker-compose up --build -d
 
-bash
-docker-compose ps
+4. Verifica que esté funcionando:
+
+    ```bash
+    docker-compose ps
+
 ### 🌐 Acceso a la aplicación
-Aplicación Flask: http://localhost:5000
+- Aplicación Flask: http://localhost:5000
 
-PostgreSQL:
+- PostgreSQL:
 
-bash
-docker exec -it flask-postgres-docker-db-1 psql -U tu_usuario_db tu_base_de_datos
+    ```bash
+    docker exec -it flask-postgres-docker-db-1 psql -U tu_usuario_db tu_base_de_datos
+
 ### 🧪 Ejecutar tests
 Los tests están en el directorio tests/ con cobertura del 80%+.
 
 Ejecuta los tests con:
+    ```bash
+    docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
 
-bash
-docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
-📂 Estructura del proyecto
+### 📂 Estructura del proyecto
 .
 ├── app/
 │   ├── __init__.py          # Factoría de la aplicación
@@ -58,28 +63,22 @@ docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
 │   └── test_routes.py       # Tests de rutas
 ├── Dockerfile               # Contenedor de Flask
 ├── docker-compose.yml       # Orquestación
-├── .env.example             # Plantilla de variables
-└── requirements.txt         # Dependencias Python
+├── .example_env             # Plantilla de variables
+├── manage.sh                # Script para inicializar el proceso
+├── requirements.txt         # Dependencias Python
+└── manage.py                # Entrypoint Python
 
 ### 🔧 Configuración
 Variables de entorno principales (en .env):
-
-
+    ```ini
 FLASK_ENV=development
 DATABASE_URL=postgresql://usuario:contraseña@db:5432/nombre_db
 SECRET_KEY=tu-clave-secreta
 
-### 🛠️ Comandos útiles
-Comando	Descripción
-docker-compose up -d	Inicia servicios en segundo plano
-docker-compose down	Detiene y elimina contenedores
-docker-compose logs -f flask-app	Muestra logs de la app
-docker-compose exec flask-app flask shell	Abre shell de Flask
 ### 📈 Monitorización
 Ver uso de recursos:
-
-bash
-docker stats
+    ```bash
+    docker stats
 ### 🚨 Solución de problemas
 Conflictos de puertos: Verifica que los puertos 5000 (Flask) y 5432 (Postgres) estén libres
 

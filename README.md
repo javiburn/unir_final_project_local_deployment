@@ -51,7 +51,7 @@ Ejecuta los tests con:
     docker-compose exec flask-app pytest -v --cov=app --cov-report=term-missing
 
 ### 📂 Estructura del proyecto
-    ```bash
+    ```
     ├── app/
     │   ├── __init__.py          # Factoría de la aplicación
     │   ├── config.py            # Configuración
@@ -67,18 +67,21 @@ Ejecuta los tests con:
     ├── manage.sh                # Script para inicializar el proceso
     ├── requirements.txt         # Dependencias Python
     └── manage.py                # Entrypoint Python
+    ```
 
 ### 🔧 Configuración
 Variables de entorno principales (en .env):
-    ```ini
-FLASK_ENV=development
-DATABASE_URL=postgresql://usuario:contraseña@db:5432/nombre_db
-SECRET_KEY=tu-clave-secreta
+    ```
+    FLASK_ENV=development
+    DATABASE_URL=postgresql://usuario:contraseña@db:5432/nombre_db
+    SECRET_KEY=tu-clave-secreta
+    ```
 
 ### 📈 Monitorización
 Ver uso de recursos:
-    ```bash
+    ```
     docker stats
+    ```
 ### 🚨 Solución de problemas
 Conflictos de puertos: Verifica que los puertos 5000 (Flask) y 5432 (Postgres) estén libres
 

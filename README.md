@@ -185,7 +185,7 @@ Utilizamos [Conventional Commits](https://www.conventionalcommits.org) para mens
 ## 📋 Requisitos para Pull Requests
 
 ### 📝 Descripción obligatoria
-    ```markdown
+    ```
     ## Qué cambia
     - [Descripción técnica clara de las modificaciones]
 
@@ -196,6 +196,7 @@ Utilizamos [Conventional Commits](https://www.conventionalcommits.org) para mens
     1. [Pasos específicos para verificar]
     2. [Casos de prueba clave]
     3. [Configuraciones especiales requeridas]
+    ```
 ### 📈 Monitorización
 Ver uso de recursos:
     ```
